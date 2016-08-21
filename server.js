@@ -6,19 +6,15 @@ var bodyParser = require('body-parser');
 var logger   = require('morgan');
 var path = require('path');
 var fs = require('fs');
+var debug = require('debug')('express');
 
 // prepare server
 
-
+//debug('Booting %s', 'AGC APP');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
 var accessLogStream = fs.createWriteStream(__dirname + '/log/access.log',{flags: 'a'});
-
-console.info('env: ' + app.get('env'));
-console.info('APP_ENV: ' + app.get('APP_ENV'));
-console.info('ENV: ' + app.get('ENV'));
 
 if (app.get('env') == 'production') {
   app.use(logger('combined', { /*skip: function(req, res) { return res.statusCode < 400 },*/ stream: accessLogStream }));
@@ -40,3 +36,4 @@ app.get('/', function (req, res) {
 
 app.listen(port);
 console.info('Server listening on port: ' + port);
+//debug('Server listening on port: ' + port);

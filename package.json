@@ -3,22 +3,28 @@
   "version": "0.0.1",
   "description": "AGC Price (React Version)",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Voljka/agc_react.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "watchify app/app.js -o dist/app.js"
+    "start": "watchify app/app.js -o dist/app.js -v | cp app/locale/*.yaml dist"
   },
   "author": "Volodymyr Liebied",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
+    "debug": "^2.2.0",
     "express": "^4.14.0",
     "flux": "^2.1.1",
     "jquery": "^3.1.0",
     "morgan": "^1.7.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
-    "react-router": "^2.6.1"
+    "react-router": "^2.6.1",
+    "yamljs": "^0.2.8"
   },
   "browserify": {
     "transform": [

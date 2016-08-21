@@ -1,0 +1,17 @@
+common:
+
+mainmenu:
+ clients: "Клиенты"
+ ldc: "LDC"
+ potentials: "Потенциальные"
+ summary_prices: "Сводные"
+ special_prices: "Спеццены"
+ calculatable_prices: "Расчетка"
+ marketing: "Маркетинг"
+ rules: "Правила"
+ projects: "Проекты"
+ admin: "Параметры"
+ password_change: "Пароль"
+ logout: "Выйти"
+
+windows:

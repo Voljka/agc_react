@@ -1,0 +1,17 @@
+common:
+
+mainmenu:
+ clients: "Clients"
+ ldc: "LDC"
+ potentials: "PreClients"
+ summary_prices: "Summaries"
+ special_prices: "Specials"
+ calculatable_prices: "Calculatables"
+ marketing: "Marketing"
+ rules: "Rules"
+ projects: "Projects"
+ admin: "Admin"
+ password_change: "Password"
+ logout: "Log out"
+
+windows:
