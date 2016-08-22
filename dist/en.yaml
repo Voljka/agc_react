@@ -13,5 +13,8 @@ mainmenu:
  admin: "Admin"
  password_change: "Password"
  logout: "Log out"
+ prices: "Prices"
+ settings: "Settings"
+ password_changing: "Password changing"
 
 windows:

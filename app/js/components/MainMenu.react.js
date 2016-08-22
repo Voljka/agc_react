@@ -1,9 +1,15 @@
 import React from 'react';
 
+import MainMenuItems from './MainMenuItems.react';
+
 class MainMenu extends React.Component {
 	render() {
 		return (
-			<div className="col-xs-12 MainMenu">MainMenu</div>
+			<nav className="navbar navbar-default">
+				<div className="container-fluid">
+					<MainMenuItems />
+				</div>								
+			</nav>			
 		)
 	}
 }

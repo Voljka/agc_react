@@ -1,0 +1,65 @@
+{
+	"items": [
+		{
+			"elementName": "clients",
+			"href" : "/"
+		},
+		{
+			"elementName": "ldc",
+			"href" : "/ldc"
+		},
+		{
+			"elementName": "potentials",
+			"href" : "/potentials"
+		},
+		{
+			"elementName": "prices",
+			"href" : "/prices",
+			"subitems": [
+				{
+					"elementName": "summary_prices",
+					"href" : "/summary"
+				},
+				{
+					"elementName": "special_prices",
+					"href" : "/special"
+				},
+				{
+					"elementName": "calculatable_prices",
+					"href" : "/calculatables"
+				}
+			]
+		},
+		{
+			"elementName": "marketing",
+			"href" : "/marketing"
+		},
+		{
+			"elementName": "projects",
+			"href" : "/projects"
+		},
+		{
+			"elementName": "settings",
+			"href" : "/settings",
+			"subitems": [
+				{
+					"elementName": "rules",
+					"href" : "/rules"
+				},
+				{
+					"elementName": "admin",
+					"href" : "/admin"
+				},
+				{
+					"elementName": "password_change",
+					"href" : "/password",
+				}
+			]
+		},
+		{
+			"elementName": "logout",
+			"href" : "/logout",
+			"type" : "auth"
+		}
+	]
+}

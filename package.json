@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "watchify app/app.js -o dist/app.js -v | cp app/locale/*.yaml dist"
+    "start": "watchify app/app.js -o dist/app.js -v | cp app/locale/*.yaml dist | cp app/data/*.yaml dist"
   },
   "author": "Volodymyr Liebied",
   "license": "ISC",
@@ -44,6 +44,8 @@
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
     "watchify": "^3.7.0"
   }
 }

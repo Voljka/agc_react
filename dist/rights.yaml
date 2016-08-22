@@ -1,0 +1,51 @@
+1:
+ mainmenu:
+  ldc: false
+  calculatable_prices: false
+  marketing: false
+  rules: false
+  projects: false
+  admin: false
+
+2:
+ mainmenu:
+  marketing: false
+  rules: false
+
+3:
+ mainmenu:
+  ldc: false
+  summary_prices: false
+  special_prices: false
+  calculatable_prices: false
+  marketing: false
+  rules: false
+  projects: false
+  admin: false
+
+4:
+ mainmenu:
+  clients: false
+  ldc: false
+  potentials: false
+  summary_prices: false
+  special_prices: false
+  calculatable_prices: false
+  marketing: false
+  rules: false
+  admin: false
+
+5:
+ mainmenu:
+  clients: true
+6:
+ mainmenu:
+  clients: false
+  ldc: false
+  potentials: false
+  summary_prices: false
+  special_prices: false
+  calculatable_prices: false
+  rules: false
+  projects: false
+  admin: false

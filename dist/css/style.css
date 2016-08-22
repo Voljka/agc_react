@@ -1,0 +1,25 @@
+@media screen and (min-width: 1140px) {
+  header {
+    background-color: green; } }
+
+@media screen and (max-width: 1140px) and (min-width: 941px) {
+  header {
+    background-color: black; } }
+
+@media screen and (max-width: 940px) and (min-width: 721px) {
+  header {
+    background-color: blue; } }
+
+@media screen and (max-width: 720px) and (min-width: 577px) {
+  header {
+    background-color: yellow; } }
+
+@media screen and (max-width: 576px) {
+  header {
+    background-color: red; } }
+
+header {
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px; }

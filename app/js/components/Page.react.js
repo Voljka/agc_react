@@ -13,9 +13,7 @@ class Page extends React.Component{
 					<PageHeader />
 				</div>
 
-				<div className='row'>
-					<MainMenu />
-				</div>
+				<MainMenu />
 
 				<div className='row'>
 					<LeftSideBar />
@@ -28,3 +26,4 @@ class Page extends React.Component{
 };
 
 export default Page;
+
