@@ -8,7 +8,6 @@ var path = require('path');
 var fs = require('fs');
 var debug = require('debug')('express');
 
-// prepare server
 
 //debug('Booting %s', 'AGC APP');
 app.use(bodyParser.json());
@@ -22,8 +21,13 @@ if (app.get('env') == 'production') {
   app.use(logger('dev'));
 }
 
-var api = require('./api')
-app.use('/api/v1', api); // redirect API calls
+// API
+
+var apiBase = '/api/v1';
+// API route handlers
+var groups = require('./app/js/api/groups');
+// API routes
+app.use(apiBase+'/groups', groups); // redirect API calls
 
 app.use('/', express.static(__dirname + '/dist')); // redirect root
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS

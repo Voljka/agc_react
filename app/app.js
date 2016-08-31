@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-// Choosing correct i18n file
+// Choose correct i18n file
 var YAML = require('yamljs');
 
 // Rendering Page

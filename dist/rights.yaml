@@ -22,6 +22,7 @@
   rules: false
   projects: false
   admin: false
+  prices: false
 
 4:
  mainmenu:
@@ -34,10 +35,12 @@
   marketing: false
   rules: false
   admin: false
+  prices: false
 
 5:
  mainmenu:
   clients: true
+
 6:
  mainmenu:
   clients: false
@@ -49,3 +52,4 @@
   rules: false
   projects: false
   admin: false
+  prices: false

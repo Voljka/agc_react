@@ -13,8 +13,8 @@ mainmenu:
  admin: "Параметры"
  password_change: "Пароль"
  logout: "Выйти"
+ login: "Войти"
  prices: "Цены"
  settings: "Настройки"
- password_changing: "Смена пароля"
 
 windows:

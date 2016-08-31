@@ -60,6 +60,11 @@
 			"elementName": "logout",
 			"href" : "/logout",
 			"type" : "auth"
+		},
+		{
+			"elementName": "login",
+			"href" : "/login",
+			"type" : "auth"
 		}
 	]
 }

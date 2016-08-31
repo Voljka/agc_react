@@ -12,9 +12,9 @@ mainmenu:
  projects: "Projects"
  admin: "Admin"
  password_change: "Password"
+ login: "Log in"
  logout: "Log out"
  prices: "Prices"
  settings: "Settings"
- password_changing: "Password changing"
 
 windows:

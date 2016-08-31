@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+import { Link } from 'react-router';
 
 import getCorrectI18nFile from '../lib/i18n/i18n';
 var _i18n = getCorrectI18nFile();
@@ -40,7 +42,6 @@ class MainMenuItems extends React.Component {
 	}
 }
 
-
 const makeCurrentItem = (item, submenu) => {
 
 	var result = [];
@@ -63,9 +64,7 @@ const makeCurrentItem = (item, submenu) => {
 				//var _key = 'key'+(+newDate);
 				result.push(
 					<li key={+new Date} className="dropdown-submenu" data-submenu>
-					   <a > 
-					   		{ _i18n.mainmenu[item.elementName] } 
-					   </a>
+					   <Link to={item.href}> { _i18n.mainmenu[item.elementName] }  </Link>
 					   <ul className="dropdown-menu">
 					   	{ subItems }
 					   </ul>	
@@ -87,7 +86,7 @@ const makeCurrentItem = (item, submenu) => {
 		} else {
 			result.push(
 				<li key={+new Date}>
-					<a href={ item.href }> { _i18n.mainmenu[item.elementName] } </a>
+			   <Link to={item.href}> { _i18n.mainmenu[item.elementName] }  </Link>
 				</li>
 			)
 		}
@@ -95,6 +94,62 @@ const makeCurrentItem = (item, submenu) => {
 
 	return result;
 }
+
+
+// const makeCurrentItem = (item, submenu) => {
+
+// 	var result = [];
+// 	var menuClass,
+// 			menuDataToggle;
+
+// 	var isItemAvailable = userRights.mainmenu[item.elementName];
+
+// 	if ( isItemAvailable !== false) {
+
+// 		//Checking for subItems in currentItem
+// 		if (item.subitems && item.subitems.length > 0) {
+
+// 			var subItems = [];
+// 			for (var key in item.subitems) {
+// 				subItems.push(makeCurrentItem(item.subitems[key], true))
+// 			}	
+			
+// 			if (submenu) {
+// 				//var _key = 'key'+(+newDate);
+// 				result.push(
+// 					<li key={+new Date} className="dropdown-submenu" data-submenu>
+// 					   <a > 
+// 					   		{ _i18n.mainmenu[item.elementName] } 
+// 					   </a>
+// 					   <ul className="dropdown-menu">
+// 					   	{ subItems }
+// 					   </ul>	
+// 					</li>
+// 				);					
+// 			} else {
+// 				result.push(
+// 					<li key={+new Date} className="dropdown">
+// 					   <a href='#' className="dropdown-toggle"  data-submenu data-toggle="dropdown"> 
+// 					   		{ _i18n.mainmenu[item.elementName] } 
+// 					   		<b className="caret"></b>
+// 					   </a>
+// 					   <ul className="dropdown-menu">
+// 					   	{ subItems }
+// 					   </ul>	
+// 					</li>
+// 				);					
+// 			}
+// 		} else {
+// 			result.push(
+// 				<li key={+new Date}>
+// 					<a href={ item.href }> { _i18n.mainmenu[item.elementName] } </a>
+// 				</li>
+// 			)
+// 		}
+// 	}
+
+// 	return result;
+// }
 
 export default MainMenuItems;
 

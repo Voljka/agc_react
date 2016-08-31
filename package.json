@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "watchify app/app.js -o dist/app.js -v | cp app/locale/*.yaml dist | cp app/data/*.yaml dist"
+    "start": "watchify app/app.js -o dist/app.js -v"
   },
   "author": "Volodymyr Liebied",
   "license": "ISC",
@@ -21,9 +21,14 @@
     "flux": "^2.1.1",
     "jquery": "^3.1.0",
     "morgan": "^1.7.0",
+    "mysql": "^2.11.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0",
     "yamljs": "^0.2.8"
   },
   "browserify": {
