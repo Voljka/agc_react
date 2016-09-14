@@ -9,15 +9,12 @@ export default class TableRow extends React.Component {
 		var tableCells  = [],
 
 				data = this.props.data,
-				uncode = this.props.uncode;
+				uncode = this.props.uncode,
+				fields = this.props.fields;
 
-		for (var key in data) {
-			// tableCells.push( <td key={('TD' + key)}> {data[key]} </td>)
-
-			var ind = key;
-
+		for (var key in fields) {
 			tableCells.push( 
-				<TableCell key={ 'TC'+key} data={data[key]} uncode={uncode[key]} />
+				<TableCell key={ 'TC'+key} tdWidth={fields[key].width} data={data[fields[key].id]} uncode={uncode[fields[key].id]} />
 			)
 		}
 

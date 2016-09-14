@@ -1,10 +1,13 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Router, Route, Link, browserHistory, IndexRoute }  from 'react-router';
 
 /* Store*/
 import { Provider } from 'react-redux';
 import configureStore from '../store/configureStore';
 const store = configureStore();
+
+//store.subscribe( () => console.log(store.getState()));
 
 /* Main window Elements*/
 import PageHeader from './PageHeader.react';
@@ -14,6 +17,8 @@ import App from './App.react';
 // import LeftSideBar from './LeftSideBar.react';
 
 /* Content Elements*/
+import GroupList from '../containers/GroupList';
+
 import ClientsList from './ClientsList.react';
 import ChangePasswordWindow from './ChangePasswordWindow.react';
 import Marketing from './Marketing.react';
@@ -35,7 +40,7 @@ class Page extends React.Component{
 	render(){
 		return (
 			<div>		
-					<PageHeader />
+				<PageHeader />
 
 				<div className='row'>
 					<Provider store ={ store }>
@@ -43,9 +48,9 @@ class Page extends React.Component{
 						<Router history={browserHistory}>
 							<Route path='/' component={App}>
 
-									<IndexRoute component={ClientsList} />
+									<IndexRoute component={GroupList} />
 									<Route path="login" component={LoginPage} />
-									<Route path="clients" component={ClientsList} />
+									<Route path="clients" component={GroupList} />
 									<Route path="password" component={ChangePasswordWindow} />
 									<Route path="marketing" component={Marketing} />
 									<Route path="ldc" component={LDC} />

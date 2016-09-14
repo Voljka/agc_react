@@ -4,15 +4,19 @@ export default class TableCell extends React.Component {
 	render(){
 		
 		var uncode = this.props.uncode,
-				data = this.props.data;
+			data = this.props.data,
+			tdWidth = this.props.tdWidth;
+
+		let content;
+		content = data;
 
 		if (uncode) {
-			data = uncode[data];
+			content = uncode[data];
 		}
 
 		return (
-			<td>
-				{data}
+			<td width={tdWidth}>
+				{content}
 			</td>
 		)
 	}

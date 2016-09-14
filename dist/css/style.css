@@ -1,22 +1,56 @@
 @media screen and (min-width: 1140px) {
   header {
-    background-color: green; } }
+    background-color: green; }
+  #ClientsList {
+    font-size: 12px; }
+    #ClientsList tbody {
+      height: 600px;
+      overflow-y: overlay; } }
 
 @media screen and (max-width: 1140px) and (min-width: 941px) {
   header {
-    background-color: black; } }
+    background-color: black; }
+  #ClientsList {
+    font-size: 12px; }
+    #ClientsList tbody {
+      height: 500px;
+      overflow-y: overlay; }
+    #ClientsList input[type='text'] {
+      font-size: 10px; }
+    #ClientsList input[type='checkbox'] {
+      font-size: 10px; }
+    #ClientsList select option {
+      font-size: 10px; } }
 
 @media screen and (max-width: 940px) and (min-width: 721px) {
   header {
-    background-color: blue; } }
+    background-color: blue; }
+  #ClientsList {
+    font-size: 11px; }
+    #ClientsList tbody {
+      height: 300px;
+      overflow-y: overlay; } }
 
 @media screen and (max-width: 720px) and (min-width: 577px) {
   header {
-    background-color: yellow; } }
+    background-color: yellow; }
+  #ClientsList {
+    font-size: 10px; }
+    #ClientsList tbody {
+      height: 200px;
+      overflow-y: overlay; } }
 
 @media screen and (max-width: 576px) {
   header {
-    background-color: red; } }
+    background-color: red; }
+  #ClientsList {
+    font-size: 10px; }
+    #ClientsList tbody {
+      height: 200px;
+      overflow-y: overlay; } }
+
+thead, tbody {
+  display: block; }
 
 header {
   -webkit-border-radius: 10px;

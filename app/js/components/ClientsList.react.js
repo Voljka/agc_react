@@ -1,138 +1,85 @@
 import React from 'react';
 
-import Table from './common/tables/Table.react';
+// import Table from './common/tables/Table.react';
+import GroupList from '../containers/GroupList';
 
 class ClientsList extends React.Component {
+	
+	constructor() {
+		super(); 
+		this.state = {
+			grouplist: []
+		}
+	}
+
+	componentDidMount() {
+		
+		this.serverRequest = $.get('http://localhost:8080/api/v1/groups', function (result) {
+		  	this.setState({
+		    	grouplist: result
+		  	});
+		}.bind(this));
+	}
+
+	componentWillUnmount() {
+		this.serverRequest.abort();
+	}
+
 	render() {
-		var data = [
-			{
-				id: 1,
-				name: 'Naran LTD',
-				manager: 1,
-				operator: 2,
-				group: 0,
-				shipmentPlace: 1,
-				profileType: 3,
-				plf: 0,
-				dlf: 1,
-				mf: 0,
-				sdlf: 0,
-				address: '1, Moscow highway, Saratov'
-			},
-			{
-				id: 2,
-				name: 'Saratovsteklo TH',
-				manager: 3,
-				operator: 2,
-				group: 0,
-				shipmentPlace: 1,
-				profileType: 3,
-				plf: 0,
-				dlf: 1,
-				mf: 1,
-				sdlf: 0,
-				address: '271, Posadskiy str., Saratov'
-			},
-			{
-				id: 3,
-				name: 'Stroy-Service-2',
-				manager: 3,
-				operator: 2,
-				group: 0,
-				shipmentPlace: 1,
-				profileType: 1,
-				plf: 1,
-				dlf: 0,
-				mf: 0,
-				sdlf: 0,
-				address: '14, Lev Kassil str., Engels, Saratov regoin'
-			}
-		]
 
-		var yesNo = {
-			0: 'V',
-			1: ''
-		}
+		// var yesNo = {
+		// 	0: 'V',
+		// 	1: ''
+		// }
 
-		var workersDirectory = {
-			1: 'Kozharin',
-			2: 'Kulikova',
-			3: 'Zhosan'
-		}
+		// var workersDirectory = {
+		// 	1: 'Kozharin',
+		// 	2: 'Kulikova',
+		// 	3: 'Zhosan'
+		// }
 
-		var shipmentsDirectory = {
-			1: 'Plant',
-			2: 'Warehose'
-		}
+		// // var shipmentsDirectory = {
+		// // 	1: 'Plant',
+		// // 	2: 'Warehose'
+		// // }
 
-		var profileTypesDirectory = {
-			1: "Interior",
-			2: 'Exterior',
-			3: 'Int/Ext'
-		}
+		// // var profileTypesDirectory = {
+		// // 	1: "Interior",
+		// // 	2: 'Exterior',
+		// // 	3: 'Int/Ext'
+		// // }
 
-		var uncode = 	{
-				manager: workersDirectory,
-				operator: workersDirectory,
-				shipmentPlace: shipmentsDirectory,
-				profileType: profileTypesDirectory,
-				plf: yesNo,
-				dlf: yesNo,
-				mf: yesNo,
-				sdlf: yesNo
-		}
+		// var uncode = 	{
+		// 		manager: workersDirectory,
+		// 		operator: workersDirectory,
+		// 		// shipmentPlace: shipmentsDirectory,
+		// 		// profileType: profileTypesDirectory,
+		// 		plf: yesNo,
+		// 		dlf: yesNo,
+		// 		mf: yesNo,
+		// 		sdlf: yesNo
+		// }
 
-		var fields = {
-						id: {
-							title: 'ID',
-						},
-						name: {
-							title: 'Company',
-						},
-						manager: {
-							title: 'Manager',
-						},
-						operator: {
-							title: 'Operator',
-						},
-						group: {
-							title: 'Group',
-						},
-						profileType: {
-							title: 'Profile',
-						},
-						shipmentPlace: {
-							title: 'Shipment',
-						},
-						sdlf: {
-							title: 'SDLF',
-						},
-						dlf: {
-							title: 'DLF',
-						},
-						plf: {
-							title: 'PLF',
-						},
-						mf: {
-							title: 'MF',
-						},
-						address: {
-							title: 'Address'
-						}
-		}
+
+		// return (
+		// 	<div className='container'>
+		// 		<Table 
+		// 			id="ClientsList"
+		// 			data={this.state.grouplist} 
+		// 			filterable={false}
+		// 			selectable={true}
+		// 			uncode = {uncode}
+		// 			fields = {fields}
+		// 		/>
+		// 	</div>
+		// )
 
 		return (
-			<div>
-				<Table 
-					id="ClientsList"
-					data={data} 
-					filterable={false}
-					selectable={true}
-					uncode = {uncode}
-					fields = {fields}
-				/>
+			<div className='container'>
+				<GroupList />
 			</div>
 		)
+
 	}
 }
 
