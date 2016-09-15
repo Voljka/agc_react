@@ -6,21 +6,24 @@ module.exports = [
 		title: 'Company',
 		width: "150px",
 		filterable: true,
-		filtertype: TEXT
+		filtertype: TEXT,
+		maxlength: 20
 	},
 	{
 		id: "manager",
 		title: 'Manager',
-		width: "75px",
+		width: "100px",
 		filterable: true,
-		filtertype: TEXT
+		filtertype: SELECTOR_LIST_MULTI_OPTIONAL,
+		select: 'manager'
 	},
 	{
 		id: "operator",
 		title: 'Operator',
-		width: "75px",
+		width: "100px",
 		filterable: true,
-		filtertype: TEXT
+		filtertype: SELECTOR_LIST_MULTI_OPTIONAL,
+		select: "oparator"
 	},
 	{
 		id: "group",
@@ -46,7 +49,7 @@ module.exports = [
 		title: 'Shipment',
 		width: "100px",
 		filterable: true,
-		filtertype: SELECTOR_LIST_MULTI,
+		filtertype: SELECTOR_LIST_MULTI_OPTIONAL,
 		select: {
 			1: "Plant",
 			2: "Warehose"
@@ -58,7 +61,8 @@ module.exports = [
 		width: "50px",
 		filterable: true,
 		filtertype: CHECKBOX,
-		defaultchecked: true
+		defaultchecked: true,
+		align: 'center'
 	},
 	{
 		id: "dlf",
@@ -66,7 +70,8 @@ module.exports = [
 		width: "50px",
 		filterable: true,
 		filtertype: CHECKBOX,
-		defaultchecked: true
+		defaultchecked: true,
+		align: 'center'
 	},
 	{
 		id: "plf",
@@ -74,7 +79,8 @@ module.exports = [
 		width: "50px",
 		filterable: true,
 		filtertype: CHECKBOX,
-		defaultchecked: true
+		defaultchecked: true,
+		align: 'center'
 	},
 	{
 		id: "mf",
@@ -82,13 +88,15 @@ module.exports = [
 		width: "50px",
 		filterable: true,
 		filtertype: CHECKBOX,
-		defaultchecked: true
+		defaultchecked: true,
+		align: 'center'
 	},
 	{
 		id: "address",
 		title: 'ADDRESS',
 		width: "200px",
 		filterable: true,
-		filtertype: TEXT
+		filtertype: TEXT,
+		maxlength: 30
 	}
 ]

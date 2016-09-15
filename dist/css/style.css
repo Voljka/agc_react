@@ -57,3 +57,9 @@ header {
   -o-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px; }
+
+table thead tr td {
+  vertical-align: middle !important; }
+
+table thead tr td > * {
+  vertical-align: middle !important; }

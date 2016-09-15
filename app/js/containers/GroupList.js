@@ -6,38 +6,8 @@ import { TEXT, SELECTOR_LIST, CHECKBOX, SELECTOR_LIST_MULTI, SELECTOR_LIST_MULTI
 
 import Table from '../components/common/tables/Table.react'
 
-var yesNo = {
-	0: '',
-	1: 'V'
-}
+import { dynamicSort } from '../lib/common'
 
-var workersDirectory = {
-	1: 'Kozharin',
-	2: 'Kulikova',
-	3: 'Zhosan'
-}
-
-var shipmentsDirectory = {
-	1: 'Plant',
-	2: 'Warehose'
-}
-
-var profileTypesDirectory = {
-	1: "Interior",
-	2: 'Exterior',
-	3: 'Int/Ext'
-}
-
-var uncode = 	{
-		manager: workersDirectory,
-		operator: workersDirectory,
-		shipmentPlace: shipmentsDirectory,
-		profileType: profileTypesDirectory,
-		plf: yesNo,
-		dlf: yesNo,
-		mf: yesNo,
-		sdlf: yesNo
-}
 
 let fields;
 
@@ -50,15 +20,55 @@ else if (screenWidth > 800)
 	else
 		fields = require('../tables/ClientList/480.js');
 
+var yesNo = {
+	0: ' ',
+	1: 'V'
+}
+
+var workersDirectory = [
+	{
+		id: 19,
+		name: 'Kozharin'
+	},
+	{
+		id: 17,
+		name: 'Zhosan'
+	},
+	{
+		id: 18,
+		name: 'Kulikova'
+	},
+	{
+		id: 13,
+		name: 'Abramova'
+	},
+	{
+		id: 14,
+		name: 'Ivanova'
+	}
+]
+
+var uncode = 	{
+	manager: workersDirectory,
+	operator: workersDirectory,
+	plf: yesNo,
+	dlf: yesNo,
+	mf: yesNo,
+	sdlf: yesNo
+}
+
+fields.forEach( field => {
+	if (field.select && field.select instanceof Object) 
+		uncode[field.id] = field.select
+})
 
 const getVis = (list, filters) => {
 	
-	// console.log('getVis invoked');
-	// console.log(filters);
-	
 	if (Object.keys(filters).length === 0 && filters.constructor === Object) 
-	// if (!filter &&  filter.length === 0)
 		return list;
+
+	// Sort list by Group name
+	list.sort(dynamicSort("name"));
 	
 	return list.filter( function(group) {
 		
@@ -105,7 +115,6 @@ const getVis = (list, filters) => {
 	})
 }
 
-
 const mapStateToProps = (state) => {
 
 	return {
@@ -123,12 +132,6 @@ const mapDispatchToProps = (dispatch) => {
 	dispatch(fetchGroupList());
 
 	return {
-		setData: (data) => {
-			dispatch({
-				type: 'ADD_DATA',
-				payload: data
-			})
-		},
 
 		changeFilter: (filter) => {
 			dispatch(clientlistChangeFilter(filter))
@@ -140,5 +143,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);
-
-
