@@ -1,8 +1,8 @@
 import React from  'react';
 import { connect } from 'react-redux';
 
-import { fetchGroupList, clientlistChangeFilter } from '../actions/GroupListActions'
-import { TEXT, SELECTOR_LIST, CHECKBOX, SELECTOR_LIST_MULTI } from '../constants/filters'
+import { fetchGroupList, clientlistChangeFilter, clientlistDeleteFilter } from '../actions/GroupListActions'
+import { TEXT, SELECTOR_LIST, CHECKBOX, SELECTOR_LIST_MULTI, SELECTOR_LIST_MULTI_OPTIONAL } from '../constants/filters'
 
 import Table from '../components/common/tables/Table.react'
 
@@ -88,6 +88,11 @@ const getVis = (list, filters) => {
 						isValid = false
 					break; 
 				
+				case SELECTOR_LIST_MULTI_OPTIONAL: 
+					if (! filter.value.includes(group[field].toString())) 
+						isValid = false
+					break; 
+				
 				case CHECKBOX:
 					if ((filter.value == 1) && (group[field] != filter.value)) {
 						isValid = false
@@ -127,6 +132,9 @@ const mapDispatchToProps = (dispatch) => {
 
 		changeFilter: (filter) => {
 			dispatch(clientlistChangeFilter(filter))
+		},
+		deleteFilter: (field) => {
+			dispatch(clientlistDeleteFilter(field))
 		}
 	}
 }

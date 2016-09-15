@@ -1,24 +1,9 @@
 
-// const loadGroupList = () => {
-// 	$.get('http://localhost:8080/api/v1/groups')
-// 		.then( function(data) {
-// 			dispatch({
-// 				type: 'GET_GROUPLIST_SUCCESS',
-// 				payload: response.data
-// 			})
-// 		})
-// 		// .error( function(error) {
-// 		// 	dispatch({
-// 		// 		type: 'GET_GROUPLIST_FAILURE',
-// 		// 		payload: response.error
-// 		// 	})
-// 		// })
-
-// }
-
 const initialState = { list: [], filters: {} };
 
 const grouplist = (state = initialState, action) => {
+
+	let newFilter, oldFilter;
 
 	switch (action.type) {
 
@@ -39,18 +24,34 @@ const grouplist = (state = initialState, action) => {
 				filters: action.payload
 			}
 			break;
+
+		case 'CLIENT_LIST_DELETE_FILTER':
+			
+			let deletingFilter = action.filterField;
+
+			oldFilter = state.filters; 
+			newFilter = {};
+			
+			for (var key in oldFilter) {
+				if (key != deletingFilter) {
+					newFilter[key] = oldFilter[key]
+				}
+			}
+			
+			return {
+				list: state.list,
+				filters: newFilter	
+			};
+			break;
+
 		case 'CHANGE_FILTER':
 				
-			let newFilter = state.filters;
-
-			
+			newFilter = state.filters;
 
 			newFilter[action.filterColumn] = {
 				type: action.filterType,
 				value: action.filterValue
 			}
-
-			// console.log(newFilter);
 
 			let newState = {
 				list: state.list,
@@ -60,10 +61,6 @@ const grouplist = (state = initialState, action) => {
 				)
 			}
 
-			// console.log('new state after filter set');
-			// console.log(newState);
-
-			
 			return newState;
 			break;
 
@@ -73,13 +70,3 @@ const grouplist = (state = initialState, action) => {
 }
 
 export default grouplist;
-
-// export const GroupList = (state = [], action) => {
-// 	switch (action.type) {
-// 		case 'ADD_GROUP':
-// 		case 'TOGGLE_GROUP':
-// 		default:
-// 			return state
-// 	}
-// }
-

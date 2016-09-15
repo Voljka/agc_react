@@ -22,6 +22,13 @@ export const clientlistChangeFilter = (filterData) => {
 	}
 }
 
+export const clientlistDeleteFilter = (field) => {
+	return {
+		type: 'CLIENT_LIST_DELETE_FILTER',
+		filterField: field
+	}
+}
+
 export const fetchGroupList = () => {
 	return dispatch => {
 		dispatch(requestGroupList());

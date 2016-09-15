@@ -1,4 +1,4 @@
-import { TEXT, SELECTOR_LIST, CHECKBOX, SELECTOR_LIST_MULTI } from '../../constants/filters'
+import { TEXT, SELECTOR_LIST, CHECKBOX, SELECTOR_LIST_MULTI, SELECTOR_LIST_MULTI_OPTIONAL } from '../../constants/filters'
 
 module.exports = [
 	{
@@ -34,7 +34,7 @@ module.exports = [
 		title: 'Profile',
 		width: "100px",
 		filterable: true,
-		filtertype: SELECTOR_LIST,
+		filtertype: SELECTOR_LIST_MULTI_OPTIONAL,
 		select: { 
 			1: "Interior",
 			2: "Exterior",
